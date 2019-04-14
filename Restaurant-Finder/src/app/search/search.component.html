@@ -1,3 +1,37 @@
-<p>
-  search works!
-</p>
+<label>Select an option</label>
+<br>
+<div>
+<mat-form-field>
+  <mat-label></mat-label>
+  <mat-select [(value)]="selectedRestaurantType">
+    <mat-option value ="none">Select Restaurant Type</mat-option>
+    <mat-option value="bar">Bar</mat-option>
+    <mat-option value="fastfood">Fast Food</mat-option>
+    <mat-option value="sitdown">Sit-Down</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
+
+<div>
+  <mat-form-field>
+    <mat-label></mat-label>
+    <mat-select [(value)]="selectedFoodType">
+      <mat-option value ="none">Select Food Type</mat-option>
+      <mat-option value="italian">Italian</mat-option>
+      <mat-option value="mexican">Mexican</mat-option>
+      <mat-option value="american">American</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field>
+      <mat-label></mat-label>
+      <mat-select [(value)]="selectedPriceRange">
+        <mat-option value ="none">Select Price Range</mat-option>
+        <mat-option value="cheap">Cheap</mat-option>
+        <mat-option value="midrange">Mid-Range</mat-option>
+        <mat-option value="expensive">Expensive</mat-option>
+      </mat-select>
+    </mat-form-field>
+    </div>

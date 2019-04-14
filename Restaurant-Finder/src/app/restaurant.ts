@@ -5,7 +5,9 @@ export class Restaurant{
     address:string;
     description:string;
     restaurantLink:string;
-    tags:string[];
+    restaurantType:string;
+    foodType:string;
+    priceRange:string;
     imageURL:string;
 
 }
