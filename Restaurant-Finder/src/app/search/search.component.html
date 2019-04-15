@@ -1,4 +1,4 @@
-<label>Select an option</label>
+<label>Select an option:</label>
 <br>
 <div>
 <mat-form-field>
@@ -35,3 +35,34 @@
       </mat-select>
     </mat-form-field>
     </div>
+<br>
+
+<button onclick="showList()" id="listButton">Enter</button>
+
+<div>
+<ul id="list">
+  <li>selectedRestaurantType</li>
+  <li>selectedFoodType</li>
+  <li>selectedPriceRange</li>
+</ul>
+</div>
+
+<script>
+function showList()
+{
+  var myList = document.getElementById('list');
+  var listDisplay = myList.style.display;
+  var listButton = document.getElementById('listButton')
+
+  if(listDisplay == 'block')
+  {
+    myList.style.display = 'none';
+    listButton.innerHTML = 'Show list';
+  }
+  else{
+    myList.style.display = 'block';
+    listButton.innerHTML = 'Hide list';
+  }
+}
+</script>
+

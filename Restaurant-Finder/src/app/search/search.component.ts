@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service'
 import { Restaurant } from '../restaurant'
+import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
 
 @Component({
   selector: 'app-search',
@@ -19,7 +20,9 @@ export class SearchComponent implements OnInit {
   // restaurants: Restaurant[] = this.resService.getRestaurants();
 
   ngOnInit() {
+    
   }
+
 
   // searchRestaurants(): Restaurant[]{
   //   var i: number;
