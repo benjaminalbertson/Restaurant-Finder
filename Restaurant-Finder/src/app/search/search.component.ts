@@ -23,7 +23,18 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
     
   }
-
+  
+  createList(){
+    var resList = [this.selectedRestaurantType,this.selectedFoodType,this.selectedPriceRange];
+    var ul = document.querySelector("ul");
+    for(var i = 0; i < resList.length; i++)
+    {
+      var listItem = resList[i];
+      var item = document.createElement("li");
+      item.textContent = listItem;
+      ul.appendChild(item);
+    }
+  }
 
    searchRestaurants(): Restaurant[]{
 
