@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { DetailComponent } from './detail/detail.component';
     BrowserModule,
     MatSelectModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
