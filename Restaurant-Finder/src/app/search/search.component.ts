@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RestaurantService } from '../restaurant.service'
 import { Restaurant } from '../restaurant'
 import { listLazyRoutes } from '@angular/compiler/src/aot/lazy_routes';
+import { print } from 'util';
 
 @Component({
   selector: 'app-search',
@@ -17,44 +18,29 @@ export class SearchComponent implements OnInit {
   selectedPriceRange = "none";
 
   // searchTags: string[];
-  // restaurants: Restaurant[] = this.resService.getRestaurants();
+  restaurants: Restaurant[] = this.resService.getRestaurants();
 
   ngOnInit() {
     
   }
 
 
-  // searchRestaurants(): Restaurant[]{
-  //   var i: number;
-  //   var j: number;
-  //   var k: number;
+   searchRestaurants(): Restaurant[]{
 
-  //   var result: Restaurant[];
+     var result:Restaurant[];
 
-  //   for(i = 0; i < this.searchTags.length; i++)
-  //   {
-  //     for(j = 0; j < this.restaurants.length; j++)
-  //     {
-  //       for(k = 0; k < this.restaurants[j].tags.length; k++)
-  //       {
-  //         if(this.restaurants[j].tags[k] != this.searchTags[i])
-  //         {
-  //           //breaks out of the for loop if the tags aren't equal, starts on the next restaurant in the for loop
-  //           break;
-  //         }
-  //         else{
-  //           //if all tags are equal, pushes the restaurant into a result array
-  //           result.push(this.restaurants[j])
-  //         }
-  //       }
-  //     }
-  //   }
-
-  //   //returns the result array, if none of the restaurants have the tags, it will return an empty array
-  //     return result;
+    for(let entry of this.restaurants){
+      if(entry.restaurantType === this.selectedRestaurantType && entry.foodType === this.selectedFoodType && entry.priceRange === this.selectedPriceRange){
+        result.push(entry);
+      }
+    }
+    
+     
+    //returns the result array, if none of the restaurants have the tags, it will return an empty array
+       return result;
 
 
-  // }
+  }
 
   // addTag(tag: string){
   //   this.searchTags.push(tag);
