@@ -4,6 +4,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
+import { RestaurantService } from './restaurant.service'
 
 
 import { AppComponent } from './app.component';
@@ -25,7 +26,7 @@ import { DetailComponent } from './detail/detail.component';
     FormsModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

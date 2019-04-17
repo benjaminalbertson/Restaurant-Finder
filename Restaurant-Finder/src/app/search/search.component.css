@@ -3,9 +3,17 @@ mat-option {
 }
 mat-select {
    color: black;
-   background-color: magenta;
+}
+
+mat-form-field {
+    background-color: gray;
+    padding: 15px;
 }
 
 label {
     font-weight: 700;
+}
+
+p {
+    color: black;
 }

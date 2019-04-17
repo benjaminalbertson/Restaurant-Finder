@@ -9,15 +9,23 @@ import { Restaurant } from '../restaurant'
 })
 export class ListComponent implements OnInit {
 
-  constructor(private resService: RestaurantService) { }
+  constructor(private resService: RestaurantService) { this.resService.listUpdated.subscribe(
+    (result: Restaurant[]) => this.restaurants = result
+  );}
 
   restaurants: Restaurant[];
+  
   ngOnInit() {
-    this.getRestaurants();
+    //this.restaurants = this.resService.getRestaurants();
+    //this.getRestaurants();
+    
   }
 
-getRestaurants(): /*Restaurant[]*/void{
-  this.restaurants = this.resService.getRestaurants();
-  //return this.restaurants;
-}
+
+
+// getRestaurants(): /*Restaurant[]*/void{
+//   this.restaurants = this.resService.giveFilteredRestaurants();
+//   //return this.restaurants;
+// }
+
 }

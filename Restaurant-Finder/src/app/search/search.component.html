@@ -5,11 +5,12 @@
   <mat-label>Restaurant Type:</mat-label>
   <mat-select [(value)]="selectedRestaurantType">
     <mat-option value ="none">Select Restaurant Type</mat-option>
-    <mat-option value="bar">Bar</mat-option>
-    <mat-option value="fastfood">Fast Food</mat-option>
-    <mat-option value="sitdown">Sit-Down</mat-option>
+    <mat-option value="Bar">Bar</mat-option>
+    <mat-option value="Fast Food">Fast Food</mat-option>
+    <mat-option value="Sit Down">Sit-Down</mat-option>
   </mat-select>
 </mat-form-field>
+<p>you selected {{selectedRestaurantType}}</p>
 </div>
 
 <div>
@@ -17,11 +18,12 @@
     <mat-label>Food Type:</mat-label>
     <mat-select [(value)]="selectedFoodType">
       <mat-option value ="none">Select Food Type</mat-option>
-      <mat-option value="italian">Italian</mat-option>
-      <mat-option value="mexican">Mexican</mat-option>
-      <mat-option value="american">American</mat-option>
+      <mat-option value="Italian">Italian</mat-option>
+      <mat-option value="Mexican">Mexican</mat-option>
+      <mat-option value="American">American</mat-option>
     </mat-select>
   </mat-form-field>
+  <p>you selected {{selectedFoodType}}</p>
   </div>
 
   <div>
@@ -29,14 +31,16 @@
       <mat-label>Price Range:</mat-label>
       <mat-select [(value)]="selectedPriceRange">
         <mat-option value ="none">Select Price Range</mat-option>
-        <mat-option value="cheap">Cheap</mat-option>
-        <mat-option value="midrange">Mid-Range</mat-option>
-        <mat-option value="expensive">Expensive</mat-option>
+        <mat-option value="Cheap">Cheap</mat-option>
+        <mat-option value="Midrange">Mid-Range</mat-option>
+        <mat-option value="Expensive">Expensive</mat-option>
       </mat-select>
     </mat-form-field>
+    <p>you selected {{selectedPriceRange}}</p>
     </div>
 <br>
-<button (click)="createList()">Enter</button>
+<button class="btn btn-dark" (click)="searchRestaurants()">Search</button>
+
 
 
 
