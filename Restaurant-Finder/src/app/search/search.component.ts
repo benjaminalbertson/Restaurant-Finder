@@ -29,9 +29,6 @@ export class SearchComponent implements OnInit {
 
 
    searchRestaurants(){
-
-    
-
     for(let entry of this.restaurants){
       if(entry.restaurantType == this.selectedRestaurantType && entry.foodType == this.selectedFoodType && entry.priceRange == this.selectedPriceRange){
         this.result.push(entry);
