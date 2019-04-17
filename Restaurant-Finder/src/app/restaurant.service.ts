@@ -15,16 +15,5 @@ export class RestaurantService {
   getRestaurants(): Restaurant[]{
     return RESTAURANTS;
   }
-
-  //grabs filtered restaurant results from the search component
-  // takeFilteredRestaurants(result: Restaurant[]): void {
-  //   this.filteredRestaurants = result;
-  // }
-
-  //gives the results to the list component
-  // giveFilteredRestaurants(): Restaurant[]{
-  //   return this.filteredRestaurants;
-  // }
-
   
 }
