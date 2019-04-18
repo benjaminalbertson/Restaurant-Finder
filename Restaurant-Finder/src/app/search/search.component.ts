@@ -13,34 +13,31 @@ export class SearchComponent implements OnInit {
 
   constructor(private resService: RestaurantService) { }
 
-  selectedRestaurantType: string;
-  selectedFoodType: string;
-  selectedPriceRange: string;
+  selectedRestaurantType: string = "none";
+  selectedFoodType: string = "none";
+  selectedPriceRange: string = "none";
 
   result: Restaurant[];
-
-  // searchTags: string[];
   restaurants: Restaurant[] = this.resService.getRestaurants();
 
   ngOnInit() {
     this.searchRestaurants();
-    //example
   }
   
 
 
    searchRestaurants(){
+    this.result = [];
+    
     for(let entry of this.restaurants){
-      if(entry.restaurantType == this.selectedRestaurantType && entry.foodType == this.selectedFoodType && entry.priceRange == this.selectedPriceRange){
+      if((entry.restaurantType == this.selectedRestaurantType || this.selectedRestaurantType == "none") && (entry.foodType == this.selectedFoodType || this.selectedFoodType == "none") && (entry.priceRange == this.selectedPriceRange || this.selectedPriceRange == "none")){
         this.result.push(entry);
       }
     }
-    
-    //this.resService.takeFilteredRestaurants(this.result);
 
     this.resService.listUpdated.emit(this.result);
 
-    this.result = [];
+    
 
   }
 
