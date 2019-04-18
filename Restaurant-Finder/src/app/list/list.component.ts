@@ -16,13 +16,14 @@ export class ListComponent implements OnInit {
   restaurants: Restaurant[];
   
   ngOnInit() {
+    //Integrated into constructor
     //this.restaurants = this.resService.getRestaurants();
     //this.getRestaurants();
     
   }
 
 
-
+//Integrated into constructor
 // getRestaurants(): /*Restaurant[]*/void{
 //   this.restaurants = this.resService.giveFilteredRestaurants();
 //   //return this.restaurants;

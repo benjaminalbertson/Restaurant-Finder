@@ -1,10 +1,13 @@
-<mat-card style="width: 500px">
+
+<label></label>
+
+<mat-card style="width: 500px; background-color: grey">
         <mat-card-title style="border-bottom: 1px solid grey">
-            <span class="md-title">Long Header Long Header Long Header </span>
+            <span class="md-title">Select a Restaurant</span>
         </mat-card-title>
-        <mat-card-content style="height: 200px; overflow-y: auto" >
+        <mat-card-content style="height: 300px; overflow-y: auto" >
           <ul>
-            <li *ngFor="let restaurant of restaurants">{{restaurant.description}}</li>
+            <li *ngFor="let restaurant of restaurants"><mat-card (click)="doStuff()" style="width: 200px; ">{{restaurant.description}} ({{restaurant.restaurantType}}, {{restaurant.foodType}}, {{restaurant.priceRange}})</mat-card></li>
           </ul>
      
         </mat-card-content>

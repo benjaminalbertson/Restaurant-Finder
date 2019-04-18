@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   selectedFoodType: string = "none";
   selectedPriceRange: string = "none";
 
+  resultString: string = "none";
   result: Restaurant[];
   restaurants: Restaurant[] = this.resService.getRestaurants();
 
@@ -24,7 +25,10 @@ export class SearchComponent implements OnInit {
     this.searchRestaurants();
   }
   
-
+  printArray(){
+    for(let entry in this.result)
+      this.resultString = this.resultString + entry;
+  }
 
    searchRestaurants(){
     this.result = [];
@@ -33,6 +37,7 @@ export class SearchComponent implements OnInit {
       if((entry.restaurantType == this.selectedRestaurantType || this.selectedRestaurantType == "none") && (entry.foodType == this.selectedFoodType || this.selectedFoodType == "none") && (entry.priceRange == this.selectedPriceRange || this.selectedPriceRange == "none")){
         this.result.push(entry);
       }
+      this.printArray();
     }
 
     this.resService.listUpdated.emit(this.result);
