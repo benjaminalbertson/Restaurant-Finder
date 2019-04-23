@@ -1,7 +1,7 @@
 import { Restaurant } from './restaurant';
 
 export const RESTAURANTS: Restaurant[] = [
-    {id: 1, address: "11 main", description: "burger joint", restaurantLink: "mcdonalds.com", restaurantType: "Fast Food", foodType: "American", priceRange: "Cheap", imageURL: "" },
+    {id: 1, address: "11 main", description: "burger joint", restaurantLink: "mcdonalds.com", restaurantType: "Fast Food", foodType: "American", priceRange: "Cheap", imageURL: "https://www.mcdonalds.com/content/dam/usa/logo/m_logo.png" },
     {id: 2, address: "12 main", description: "sushi place", restaurantLink: "", restaurantType: "Sit Down", foodType: "Japanese", priceRange: "Cheap", imageURL: "" },
     {id: 3, address: "13 main", description: "tea house", restaurantLink: "", restaurantType: "Sit Down", foodType: "English", priceRange: "Cheap", imageURL: "" },
     {id: 4, address: "14 main", description: "sandwich shop", restaurantLink: "", restaurantType: "Fast Food", foodType: "American", priceRange: "Cheap", imageURL: "" },

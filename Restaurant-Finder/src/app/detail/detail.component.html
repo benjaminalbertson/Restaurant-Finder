@@ -1,13 +1,13 @@
 <div *ngIf="restaurant">
 <p>
-  <img src='https://home.jimmyjohns.com/images/common/jimmyjohns_logo.png'>
+  <img src='{{restaurant.imageURL}}'>
   <mat-card-title style="border-bottom: 1px solid grey">
     <span class="md-title">{{restaurant.description}}</span>
     <ul>
       <li>{{restaurant.address}}</li>
       <li>{{restaurant.description}}</li>
       <li>{{restaurant.restaurantType}}, {{restaurant.foodType}}, {{restaurant.priceRange}}</li>
-      <li>{{restaurant.restaurantLink}}</li>
+      <li><a href='{{restaurant.restaurantLink}}'>{{restaurant.restaurantLink}}</a></li>
     </ul>
   </mat-card-title>
 </p>
