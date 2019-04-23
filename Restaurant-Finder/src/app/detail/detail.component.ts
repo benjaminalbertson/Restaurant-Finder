@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Restaurant } from '../restaurant'
+import { DetailService } from '../detail.service'
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private detService: DetailService) {this.detService.detailUpdated.subscribe(
+    (result: Restaurant) => this.restaurant = result
+  ); }
+
+  restaurant: Restaurant;
 
   ngOnInit() {
   }
+
+
+
+
 
 }

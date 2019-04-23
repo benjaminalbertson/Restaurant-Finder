@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RestaurantService } from '../restaurant.service'
 import { Restaurant } from '../restaurant'
+import { DetailService } from '../detail.service'
 
 @Component({
   selector: 'app-list',
@@ -9,11 +10,14 @@ import { Restaurant } from '../restaurant'
 })
 export class ListComponent implements OnInit {
 
-  constructor(private resService: RestaurantService) { this.resService.listUpdated.subscribe(
+ // @Output() eventClicked = new EventEmitter<Event>();
+
+  constructor(private resService: RestaurantService, private detService: DetailService) { this.resService.listUpdated.subscribe(
     (result: Restaurant[]) => this.restaurants = result
   );}
 
   restaurants: Restaurant[];
+  result: Restaurant;
   
   ngOnInit() {
     //Integrated into constructor
@@ -22,6 +26,13 @@ export class ListComponent implements OnInit {
     
   }
 
+  public open(restaurant: Restaurant): void{
+    console.log(restaurant.description);
+    //this.eventClicked.emit(event);
+    this.result = restaurant;
+    console.log(this.detService.selectedRestaurant);
+    this.detService.detailUpdated.emit(this.result);
+  }
 
 //Integrated into constructor
 // getRestaurants(): /*Restaurant[]*/void{
