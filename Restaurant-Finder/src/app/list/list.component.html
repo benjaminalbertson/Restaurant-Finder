@@ -7,7 +7,7 @@
         </mat-card-title>
         <mat-card-content style="height: 300px; overflow-y: auto" >
           <ul>
-            <li *ngFor="let restaurant of restaurants"><mat-card (click)="open(restaurant)" style="width: 200px; ">{{restaurant.description}} ({{restaurant.restaurantType}}, {{restaurant.foodType}}, {{restaurant.priceRange}})</mat-card></li>
+            <li *ngFor="let restaurant of restaurants"><mat-card (click)="open(restaurant)" style="width: 200px; ">{{restaurant.name}} {{restaurant.description}} ({{restaurant.restaurantType}}, {{restaurant.foodType}}, {{restaurant.priceRange}})</mat-card></li>
           </ul>
      
         </mat-card-content>
