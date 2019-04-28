@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { RestaurantService } from '../restaurant.service'
 import { Restaurant } from '../restaurant'
 import { DetailService } from '../detail.service'
+import { style } from '@angular/animations';
 
 @Component({
   selector: 'app-list',
@@ -32,7 +33,9 @@ export class ListComponent implements OnInit {
     this.result = restaurant;
     console.log(this.detService.selectedRestaurant);
     this.detService.detailUpdated.emit(this.result);
+    
   }
+
 
 //Integrated into constructor
 // getRestaurants(): /*Restaurant[]*/void{
